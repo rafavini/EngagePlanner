@@ -1,0 +1,35 @@
+{
+  "name": "engage-posts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Assistente para criar e publicar postagens de aula no Viva Engage",
+  "main": "dist-electron/electron/main.js",
+  "scripts": {
+    "dev": "concurrently -k -n web,main,app \"vite\" \"tsc -p tsconfig.electron.json -w --preserveWatchOutput\" \"wait-on tcp:5173 file:dist-electron/electron/main.js && cross-env ELECTRON_DEV=1 electron .\"",
+    "build": "vite build && tsc -p tsconfig.electron.json",
+    "start": "npm run build && electron .",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.electron.json --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.6",
+    "cross-env": "^10.1.0",
+    "electron": "^45.1.0",
+    "lucide-react": "^1.64.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5",
+    "wait-on": "^9.5.1"
+  },
+  "dependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}

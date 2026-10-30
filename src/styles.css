@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #004a8d;
+  --color-brand-dark: #003a70;
+  --color-accent: #f7941d;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+html, body, #root { height: 100%; }
+body { background: #f4f6f9; color: #1f2937; font-family: var(--font-sans); }
+* { scrollbar-width: thin; }
