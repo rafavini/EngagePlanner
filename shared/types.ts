@@ -49,6 +49,8 @@ export interface Settings {
   rotulosEmNegrito: boolean
   /** pausa entre postagens da fila, em segundos */
   pausaEntrePostagens: number
+  /** meta de aulas registradas por mês (aparece no painel Visão geral) */
+  metaMensal: number
 }
 
 export const SETTINGS_PADRAO: Settings = {
@@ -59,6 +61,7 @@ export const SETTINGS_PADRAO: Settings = {
   pararAntesDePublicar: true,
   rotulosEmNegrito: true,
   pausaEntrePostagens: 8,
+  metaMensal: 15,
 }
 
 export interface AppState {

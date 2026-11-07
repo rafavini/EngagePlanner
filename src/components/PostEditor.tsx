@@ -150,7 +150,7 @@ export function PostEditor({
   const setC = (k: keyof PostFields, v: string) => setCampos((o) => ({ ...o, [k]: v }))
 
   return (
-    <div className="mx-auto max-w-3xl space-y-5 pb-24">
+    <div className="mx-auto max-w-3xl space-y-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <h1 className="text-xl font-semibold text-slate-900">Postagem</h1>
@@ -260,7 +260,7 @@ export function PostEditor({
         )}
       </Passo>
 
-      <div className="fixed bottom-0 left-72 right-0 flex items-center justify-end gap-2 border-t border-slate-200 bg-white/95 px-6 py-3 backdrop-blur">
+      <div className="sticky bottom-0 flex items-center justify-end gap-2 rounded-xl border border-slate-200 bg-side/95 px-4 py-3 backdrop-blur">
         {post.status === 'publicada' ? (
           <span className="flex items-center gap-2 text-sm text-green-700"><CheckCircle2 className="h-4 w-4" /> Já publicada{post.publicadoEm ? ` em ${new Date(post.publicadoEm).toLocaleString('pt-BR')}` : ''}</span>
         ) : (

@@ -5,7 +5,7 @@ import { Botao, Campo, classeEntrada, Interruptor } from './ui'
 
 function Bloco({ titulo, dica, children }: { titulo: string; dica?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <section className="rounded-2xl border border-slate-200 bg-surface p-5 shadow-sm">
       <h2 className="text-base font-semibold text-slate-900">{titulo}</h2>
       {dica && <p className="mb-4 mt-0.5 text-sm text-slate-500">{dica}</p>}
       {!dica && <div className="h-3" />}
@@ -115,6 +115,9 @@ export function Configuracoes({
         />
         <Campo rotulo="Pausa entre uma postagem e outra (segundos)">
           <input type="number" min={3} max={120} className={`${classeEntrada} !w-28`} value={estado.settings.pausaEntrePostagens} onChange={(e) => salvar({ pausaEntrePostagens: Math.max(3, Number(e.target.value) || 8) })} />
+        </Campo>
+        <Campo rotulo="Meta mensal de postagens (aparece na Visão geral)">
+          <input type="number" min={1} max={200} className={`${classeEntrada} !w-28`} value={estado.settings.metaMensal} onChange={(e) => salvar({ metaMensal: Math.max(1, Number(e.target.value) || 15) })} />
         </Campo>
       </Bloco>
 

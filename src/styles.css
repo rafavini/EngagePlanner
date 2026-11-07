@@ -1,12 +1,58 @@
 @import "tailwindcss";
 
+/*
+ * Tema escuro: em vez de reescrever cada tela, a escala "slate" (e os tons de aviso)
+ * foi invertida aqui. Assim "text-slate-900" vira texto claro, "border-slate-200" vira
+ * uma borda escura sutil, e todos os componentes antigos acompanham o novo visual.
+ */
 @theme {
-  --color-brand: #004a8d;
-  --color-brand-dark: #003a70;
+  --color-brand: #2f7bff;
+  --color-brand-dark: #1f63da;
   --color-accent: #f7941d;
+
+  --color-page: #0a1322;
+  --color-side: #0c182b;
+  --color-surface: #0f1d35;
+
+  --color-slate-50: #152644;
+  --color-slate-100: #162a4a;
+  --color-slate-200: #1f3256;
+  --color-slate-300: #2b4066;
+  --color-slate-400: #5f7394;
+  --color-slate-500: #8a9bb8;
+  --color-slate-600: #a7b5cc;
+  --color-slate-700: #c4cfe0;
+  --color-slate-800: #e2e8f2;
+  --color-slate-900: #f3f6fb;
+
+  --color-blue-50: #12305c;
+  --color-blue-100: #143565;
+  --color-blue-700: #7db3ff;
+
+  --color-green-50: #0d2f29;
+  --color-green-100: #0f3a31;
+  --color-green-200: #15543f;
+  --color-green-700: #4ade9c;
+  --color-green-800: #6ee7b7;
+
+  --color-amber-50: #33270f;
+  --color-amber-100: #3d2e0d;
+  --color-amber-200: #5c4413;
+  --color-amber-400: #fbbf24;
+  --color-amber-700: #fbbf24;
+  --color-amber-800: #fcd34d;
+  --color-amber-900: #fde68a;
+
+  --color-red-50: #3a1621;
+  --color-red-100: #461b27;
+  --color-red-200: #6b2535;
+  --color-red-600: #f87171;
+  --color-red-700: #fca5a5;
+  --color-red-800: #fecaca;
+
   --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
 
 html, body, #root { height: 100%; }
-body { background: #f4f6f9; color: #1f2937; font-family: var(--font-sans); }
-* { scrollbar-width: thin; }
+body { background: var(--color-page); color: #e2e8f2; font-family: var(--font-sans); color-scheme: dark; }
+* { scrollbar-width: thin; scrollbar-color: #2b4066 transparent; }

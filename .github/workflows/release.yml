@@ -1,0 +1,29 @@
+name: Publicar instalador
+
+# Quando você criar uma tag como v0.1.0, o GitHub gera o .exe e anexa à Release.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run dist
+      - name: Anexar o instalador à Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/EngagePlanner-Setup-*.exe
+          generate_release_notes: true

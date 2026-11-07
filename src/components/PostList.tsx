@@ -13,10 +13,12 @@ export function PostList({
   selecionado,
   ocupado,
   onSelecionar,
+  vazio,
   onNovo,
   onPublicarProntas,
   onParar,
 }: {
+  vazio?: string
   posts: Post[]
   selecionado: string | null
   ocupado: boolean
@@ -25,7 +27,7 @@ export function PostList({
   onPublicarProntas: () => void
   onParar: () => void
 }) {
-  const prontas = posts.filter((p) => p.status === 'pronta').length
+  const prontas = posts.filter((p) => p.status === 'pronta').length // só conta as da lista exibida
 
   return (
     <div className="flex h-full flex-col">
@@ -44,7 +46,7 @@ export function PostList({
         )}
       </div>
       <ul className="flex-1 space-y-1 overflow-y-auto p-2">
-        {posts.length === 0 && <li className="p-4 text-sm text-slate-500">Nenhuma postagem ainda. Clique em “Nova postagem” para começar.</li>}
+        {posts.length === 0 && <li className="p-4 text-sm text-slate-500">{vazio ?? 'Nenhuma postagem ainda. Clique em “Nova postagem” para começar.'}</li>}
         {posts.map((p) => (
           <li key={p.id}>
             <button

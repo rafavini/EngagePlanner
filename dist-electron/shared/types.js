@@ -9,6 +9,7 @@ exports.SETTINGS_PADRAO = {
     pararAntesDePublicar: true,
     rotulosEmNegrito: true,
     pausaEntrePostagens: 8,
+    metaMensal: 15,
 };
 exports.LIMITES = {
     imagemMaxMB: 25,
